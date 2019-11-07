@@ -1,0 +1,19 @@
+[alias]
+	st = status -s -b
+	cam = commit -a -m
+	oops = commit --amend
+	co = checkout
+	br = branch
+	unstash = stash pop
+	howmany = rev-list HEAD --count
+[user]
+	name = Mohamed Omar
+	email = Mohamed12@live.co.uk
+	signingkey = B3CD136DB2EB8D0D
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[gpg]
+	program = gpg
