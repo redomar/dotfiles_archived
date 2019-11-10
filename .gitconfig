@@ -17,3 +17,7 @@
 	process = git-lfs filter-process
 [gpg]
 	program = gpg
+[commit]
+	gpgSign = true
+[tag]
+	forceSignAnnotated = true
