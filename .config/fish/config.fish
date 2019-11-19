@@ -1,4 +1,4 @@
-eval (python -m virtualfish)
+#eval (python -m virtualfish)
 
 # 
 # Aliases
@@ -6,15 +6,22 @@ eval (python -m virtualfish)
 alias servos="ssh root@redomar.co.uk"
 alias m="~/Documents/mpv.app/Contents/MacOS/mpv"
 alias config="/usr/local/bin/git --git-dir=$HOME/gitBareDotFiles --work-tree=$HOME"
+alias vif="vim ~/.config/fish/config.fish"
 
 # 
 # Fish Variables
 #
 
+# CS50 VARIABLES
 export CC="clang"
-export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
-export LDLIBS="-lcs50 -lm"
+#export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
+#export CPPFLAGS="-I$(brew --prefix zlib)/include"
+#export LDLIBS="-lcs50 -lm"
+
+# PATHS
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="/Users/Mohamed/Workspace/__.BIN:$PATH"
 
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
