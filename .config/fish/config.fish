@@ -7,16 +7,14 @@ alias servos="ssh root@redomar.co.uk"
 alias m="~/Documents/mpv.app/Contents/MacOS/mpv"
 alias config="/usr/local/bin/git --git-dir=$HOME/gitBareDotFiles --work-tree=$HOME"
 alias vif="vim ~/.config/fish/config.fish"
+alias p="python"
+alias vimode="fish_vi_key_bindings"
+alias vinorm="fish_default_key_bindings"
 
 # 
 # Fish Variables
 #
-
-# CS50 VARIABLES
 export CC="clang"
-#export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
-#export CPPFLAGS="-I$(brew --prefix zlib)/include"
-#export LDLIBS="-lcs50 -lm"
 
 # PATHS
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
@@ -24,6 +22,14 @@ export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/Users/Mohamed/Workspace/__.BIN:$PATH"
 
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
+
+# VENV 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# CS50 VARIABLES - INCOMPATIBLE WITH CMAKE
+   ##export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
+   ##export CPPFLAGS="-I$(brew --prefix zlib)/include"
+   ##export LDLIBS="-lcs50 -lm"
 
 # 
 # NVM Functions

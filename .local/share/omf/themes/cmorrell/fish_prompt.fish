@@ -31,7 +31,8 @@ end
 function show_virtualenv -d "Show active python virtual environments"
   if set -q VIRTUAL_ENV
     set -l venvname (basename "$VIRTUAL_ENV")
-    prompt_segment normal white " ($venvname) "
+    prompt_segment green black " π "
+    prompt_segment normal green " $venvname"
   end
 end
 
