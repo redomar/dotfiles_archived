@@ -3,11 +3,13 @@
 # 
 # Aliases
 #
-alias servos="ssh root@redomar.co.uk"
-alias m="~/Documents/mpv.app/Contents/MacOS/mpv"
+alias c="code ."
 alias config="/usr/local/bin/git --git-dir=$HOME/gitBareDotFiles --work-tree=$HOME"
-alias vif="vim ~/.config/fish/config.fish"
+alias lll="tree -L 1 -d"
+alias m="~/Documents/mpv.app/Contents/MacOS/mpv"
 alias p="python"
+alias servos="ssh root@redomar.co.uk"
+alias vif="vim ~/.config/fish/config.fish"
 alias vimode="fish_vi_key_bindings"
 alias vinorm="fish_default_key_bindings"
 
@@ -19,12 +21,13 @@ export CC="clang"
 # PATHS
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-export PATH="/Users/Mohamed/Workspace/__.BIN:$PATH"
 
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
 # VENV 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 
 # CS50 VARIABLES - INCOMPATIBLE WITH CMAKE
    ##export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
