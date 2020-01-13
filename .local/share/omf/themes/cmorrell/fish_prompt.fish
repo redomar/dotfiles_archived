@@ -28,6 +28,18 @@ function show_status -d "Function to show the current status"
     end
 end
 
+function show_node -d "Show node active"
+  if test -e .nvmrc
+    if test -n "$NVM_NODE"
+      prompt_segment black green "⬢ $NVM_NODE"
+    else if test -n "$NVM_BIN"
+      while read -la line
+         prompt_segment black green $line
+       end < .nvmrc 
+    end
+  end
+end
+
 function show_virtualenv -d "Show active python virtual environments"
   if set -q VIRTUAL_ENV
     set -l venvname (basename "$VIRTUAL_ENV")
@@ -92,5 +104,6 @@ function fish_prompt
   show_virtualenv
   show_user
   show_pwd
+  show_node
   show_prompt
 end

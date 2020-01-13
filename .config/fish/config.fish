@@ -1,16 +1,21 @@
 #eval (python -m virtualfish)
 
-# 
+#
+# Abbreviations
+#
+abbr -a c "code ."
+abbr -a lll "tree -L 1 -d"
+abbr -a p "python"
+abbr -a v "vim"
+abbr -a vif "vim ~/.config/fish/config.fish"
+ 
+#
 # Aliases
 #
-alias c="code ."
 alias config="/usr/local/bin/git --git-dir=$HOME/gitBareDotFiles --work-tree=$HOME"
-alias lll="tree -L 1 -d"
 alias m="~/Documents/mpv.app/Contents/MacOS/mpv"
-alias p="python"
 alias servos="ssh root@redomar.co.uk"
-alias vif="vim ~/.config/fish/config.fish"
-alias vimode="fish_vi_key_bindings"
+alias vimoder="fish_vi_key_bindings"
 alias vinorm="fish_default_key_bindings"
 
 # 
@@ -52,6 +57,10 @@ function find_up
 end
 
 function __check_nvm --on-variable PWD --description 'Detect node version'
+  if test -z "$NVM_BIN"
+    return
+  end
+
   if test -f .nvmrc
     set node_version (nvm version)
     set nvmrc_node_version (nvm version (cat .nvmrc))
