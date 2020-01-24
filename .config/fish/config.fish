@@ -3,10 +3,12 @@
 #
 # Abbreviations
 #
+abbr -a a "xdcc-dl"
 abbr -a c "code ."
 abbr -a lll "tree -L 1 -d"
+abbr -a nodem "./node_modules/.bin/nodemon"
 abbr -a p "python"
-abbr -a v "vim"
+abbr -U v "vim"
 abbr -a vif "vim ~/.config/fish/config.fish"
  
 #
@@ -26,6 +28,7 @@ export CC="clang"
 # PATHS
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+source $HOME/.cargo/env
 
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
