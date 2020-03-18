@@ -21,3 +21,5 @@
 	gpgSign = true
 [tag]
 	forceSignAnnotated = true
+[core]
+	pager = less -+X -+F

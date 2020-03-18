@@ -2,6 +2,7 @@
 # Abbreviations
 #
 abbr -a a "xdcc-dl"
+abbr -a ari "aria2c"
 abbr -a c "code ."
 abbr -a cl "clear"
 abbr -a e "ssh eagle"
@@ -9,6 +10,7 @@ abbr -a lll "tree -L 1 -d"
 abbr -a nodem "./node_modules/.bin/nodemon"
 abbr -a o "open ."
 abbr -a p "python"
+abbr -a py "pyenv activate"
 abbr -U v "vim"
 abbr -a vif "vim ~/.config/fish/config.fish"
 
@@ -55,22 +57,27 @@ export CC="clang" # More C lib functions folder ./functions/cs.fish
 # rust-lang cargo
 source $HOME/.cargo/env
 
-# gnu grep and make
+# GNU Varient unix utils
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
 # pkgconfig ncurses
 export PKG_CONFIG_PATH="/usr/local/Cellar/ncurses/6.1_1/lib/pkgconfig"
 # pkgconfig sqlite
 set -gx PKG_CONFIG_PATH "/usr/local/opt/sqlite/lib/pkgconfig" $PKG_CONFIG_PATH 
+# pkgconfig gstreamer1.0
+set -gx PKG_CONFIG_PATH "/usr/local/Cellar/gstreamer/1.16.2/lib/pkgconfig" $PKG_CONFIG_PATH
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -gx LDFLAGS "-L/usr/local/opt/sqlite/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
 
+# python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # pyenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 status --is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
 
