@@ -31,7 +31,7 @@ end
 function show_node -d "Show node active"
   if test -e .nvmrc
     if test -n "$NVM_NODE"
-      prompt_segment black green "$NVM_NODE "
+      prompt_segment black green "$NVM_NODE  "
     else if test -n "$NVM_BIN"
       while read -la line
          prompt_segment black green $line
